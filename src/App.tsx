@@ -50,7 +50,7 @@ function App() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
-  const { isPlaying, toggle, reset, play } = useTeleprompterScroll({
+  const { isPlaying, toggle, reset, play, pause } = useTeleprompterScroll({
     containerRef,
     textRef,
     speed,
@@ -61,6 +61,7 @@ function App() {
   const handleToggleRecord = () => {
     if (isRecording) {
       stop();
+      pause();
       return;
     }
     clearResult();
