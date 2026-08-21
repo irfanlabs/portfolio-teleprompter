@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Roboto", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --color-brand-400: #6d9aff;
+  --color-brand-500: #4c7dff;
+  --color-brand-600: #3b63d8;
+  --color-violet-brand: #8b5cf6;
+  --color-ink-950: #0b0c0f;
+  --color-ink-900: #121419;
+  --color-ink-850: #16181e;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink-950);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(76, 125, 255, 0.35);
+  color: #fff;
+}
+
+/* Accessible, on-brand focus rings */
+:focus-visible {
+  outline: 2px solid rgba(109, 154, 255, 0.9);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Brand gradient text / surfaces */
+.brand-gradient {
+  background-image: linear-gradient(135deg, #4c7dff 0%, #8b5cf6 100%);
+}
+
+.brand-gradient-text {
+  background-image: linear-gradient(135deg, #9db9ff 0%, #c4b0ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass panels */
+.glass-panel {
+  background: linear-gradient(to bottom, rgba(18, 20, 25, 0.72), rgba(11, 12, 15, 0.82));
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.glass-pill {
+  background: linear-gradient(to bottom, rgba(22, 24, 30, 0.75), rgba(12, 13, 17, 0.85));
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.modal-card {
+  background: linear-gradient(to bottom, #16181e, #101217);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Recording pulse ring around the record button */
+@keyframes rec-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+.rec-pulse-ring {
+  animation: rec-pulse 1.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+/* Modal entrance */
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-in {
+  animation: modal-in 0.22s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rec-pulse-ring,
+  .modal-in {
+    animation: none;
+  }
+}
+
+/* Custom range slider styling (Tailwind v4 has no built-in slider utilities) */
+input[type="range"].tp-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  outline: none;
+}
+
+input[type="range"].tp-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4c7dff, #8b5cf6);
+  border: 2px solid #fff;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(76, 125, 255, 0.55);
+  margin-top: 0;
+  transition: transform 0.15s ease;
+}
+
+input[type="range"].tp-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"].tp-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4c7dff, #8b5cf6);
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+input[type="range"].tp-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Thin scrollbar for textareas/selects on dark surfaces */
+.tp-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.tp-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tp-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Prompter Studio — Online Teleprompter & Recorder",
+  "short_name": "Prompter Studio",
+  "description": "Professional browser-based teleprompter with built-in video recording. Read your script, record in up to 4K, download instantly — nothing is uploaded.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0C0F",
+  "theme_color": "#0B0C0F",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
