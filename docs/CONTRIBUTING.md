@@ -82,7 +82,9 @@ src/
 │   ├── useMediaStream.ts   #   camera/mic acquisition & device selection
 │   ├── useRecorder.ts      #   MediaRecorder wrapper (start/stop/download)
 │   ├── useTeleprompterScroll.ts  # script auto-scroll engine
-│   └── useLocalStorage.ts  #   persisted settings & script
+│   ├── useLocalStorage.ts  #   persisted settings & script
+│   └── useVideoConverter.ts      # conversion state for the download modal
+├── lib/videoConverter.ts   # ffmpeg.wasm wrapper (MP4/MKV/MOV export)
 └── constants/quality.ts    # resolution presets & bitrate estimation
 ```
 

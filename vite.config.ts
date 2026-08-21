@@ -8,4 +8,9 @@ export default defineConfig({
   server: {
     host: true,
   },
+  optimizeDeps: {
+    // @ffmpeg/ffmpeg spawns its worker via import.meta.url; pre-bundling
+    // breaks that path resolution in dev mode.
+    exclude: ['@ffmpeg/ffmpeg', '@ffmpeg/util'],
+  },
 })

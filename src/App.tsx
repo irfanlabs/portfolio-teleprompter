@@ -115,6 +115,7 @@ function App() {
         <RecordingPreviewModal
           url={result.url}
           filename={result.filename}
+          mimeType={result.mimeType}
           onRerecord={handleRerecord}
           onClose={() => setPreviewOpen(false)}
         />

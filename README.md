@@ -13,6 +13,7 @@ This project is open source and community-driven. Anyone is welcome to use it, m
 - 🪞 **Mirrored preview** for natural selfie framing and teleprompter glass rigs — recordings are never mirrored
 - 🎚️ **Device & quality picker** — choose camera, microphone, and any resolution your hardware supports
 - ▶️ **Instant review** — preview your take, download it, or re-record in one tap
+- 📦 **Export to MP4, MKV, or MOV** — on-device conversion via ffmpeg.wasm; the converter loads lazily (~31 MB) only when you use it
 - 🔒 **Private by design** — footage never leaves your machine; scripts and preferences persist locally
 
 ## Getting started
@@ -38,7 +39,7 @@ React 19 · TypeScript · Tailwind CSS 4 · Vite — with the MediaRecorder and 
 
 ## Browser support
 
-Latest Chrome, Edge, and Safari. Recordings download as WebM (VP9/VP8 + Opus) or MP4 depending on browser support.
+Latest Chrome, Edge, and Safari. Recordings capture natively as WebM (VP9/VP8 + Opus) or MP4 depending on the browser, and can then be exported to MP4, MKV, or MOV in any browser — conversion runs entirely on your device.
 
 ## Contributing
 
